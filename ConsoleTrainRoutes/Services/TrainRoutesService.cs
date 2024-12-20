@@ -64,5 +64,31 @@ namespace ConsoleTrainRoutes.Services
 
             return count;
         }
+
+        public int FindShortestRoute(string start, string end)
+        {
+            return FindShortestRoute(start, end, new List<string>());
+        }
+
+        private int FindShortestRoute(string current, string destination, List<string> visited)
+        {
+            if (current == destination && visited.Any())
+                return 0;
+
+            visited.Add(current);
+            int minDistance = int.MaxValue;
+
+            foreach (var route in Route.Routes.Where(r => r.From == current))
+            {
+                if (!visited.Contains(route.To) || route.To == destination)
+                {
+                    int distance = FindShortestRoute(route.To, destination, new List<string>(visited));
+                    if (distance != int.MaxValue)
+                        minDistance = Math.Min(minDistance, distance + route.Distance);
+                }
+            }
+
+            return minDistance;
+        }
     }
 }

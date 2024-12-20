@@ -11,6 +11,8 @@ try
     Console.WriteLine($"Test #5: {service.CalculateRouteDistance(new List<string> { "A", "E", "D" })}");
     Console.WriteLine($"Test #6: {service.CountTripsWithMaxStops("C", "C", 3)}");
     Console.WriteLine($"Test #7: {service.CountTripsWithExactStops("A", "C", 4)}");
+    Console.WriteLine($"Test #8: {service.FindShortestRoute("A", "C")}");
+    Console.WriteLine($"Test #9: {service.FindShortestRoute("B", "B")}");
 }
 catch (Exception ex)
 {
