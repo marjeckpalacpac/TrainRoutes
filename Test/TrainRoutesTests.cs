@@ -40,6 +40,14 @@ namespace Test
             Assert.Equal(3, _trainRoutes.CountTripsWithExactStops("A", "C", 4));
         }
 
+        [Fact]
+        public void TestShortestRoutes()
+        {
+            // Test #8
+            Assert.Equal(9, _trainRoutes.FindShortestRoute("A", "C"));
 
+            // Test #9
+            Assert.Equal(9, _trainRoutes.FindShortestRoute("B", "B"));
+        }
     }
 }
