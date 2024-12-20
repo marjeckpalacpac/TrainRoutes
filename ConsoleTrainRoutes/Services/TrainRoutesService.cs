@@ -24,5 +24,25 @@ namespace ConsoleTrainRoutes.Services
 
             return distance;
         }
+
+        public int CountTripsWithMaxStops(string start, string end, int maxStops)
+        {
+            return CountTrips(start, end, 0, maxStops);
+        }
+
+        private int CountTrips(string current, string destination, int stops, int maxStops)
+        {
+            if (stops > maxStops) return 0;
+
+            int count = 0;
+            if (stops > 0 && current == destination) count++;
+
+            foreach (var route in Route.Routes.Where(r => r.From == current))
+            {
+                count += CountTrips(route.To, destination, stops + 1, maxStops);
+            }
+
+            return count;
+        }
     }
 }

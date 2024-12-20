@@ -8,6 +8,8 @@ try
     Console.WriteLine($"Test #2: {service.CalculateRouteDistance(new List<string> { "A", "D" })}");
     Console.WriteLine($"Test #3: {service.CalculateRouteDistance(new List<string> { "A", "D", "C" })}");
     Console.WriteLine($"Test #4: {service.CalculateRouteDistance(new List<string> { "A", "E", "B", "C", "D" })}");
+    Console.WriteLine($"Test #5: {service.CalculateRouteDistance(new List<string> { "A", "E", "D" })}");
+    Console.WriteLine($"Test #6: {service.CountTripsWithMaxStops("C", "C", 3)}");
 }
 catch (Exception ex)
 {

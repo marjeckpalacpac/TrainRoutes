@@ -9,5 +9,6 @@ namespace ConsoleTrainRoutes.Services
     public interface ITrainRoutesService
     {
         int CalculateRouteDistance(List<string> towns);
+        int CountTripsWithMaxStops(string start, string end, int maxStops);
     }
 }
