@@ -44,5 +44,25 @@ namespace ConsoleTrainRoutes.Services
 
             return count;
         }
+
+        public int CountTripsWithExactStops(string start, string end, int exactStops)
+        {
+            return CountTripsExact(start, end, 0, exactStops);
+        }
+
+        private int CountTripsExact(string current, string destination, int stops, int exactStops)
+        {
+            if (stops > exactStops) return 0;
+
+            int count = 0;
+            if (stops == exactStops && current == destination) return 1;
+
+            foreach (var route in Route.Routes.Where(r => r.From == current))
+            {
+                count += CountTripsExact(route.To, destination, stops + 1, exactStops);
+            }
+
+            return count;
+        }
     }
 }

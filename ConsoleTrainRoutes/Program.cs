@@ -10,6 +10,7 @@ try
     Console.WriteLine($"Test #4: {service.CalculateRouteDistance(new List<string> { "A", "E", "B", "C", "D" })}");
     Console.WriteLine($"Test #5: {service.CalculateRouteDistance(new List<string> { "A", "E", "D" })}");
     Console.WriteLine($"Test #6: {service.CountTripsWithMaxStops("C", "C", 3)}");
+    Console.WriteLine($"Test #7: {service.CountTripsWithExactStops("A", "C", 4)}");
 }
 catch (Exception ex)
 {
