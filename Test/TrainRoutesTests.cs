@@ -49,5 +49,12 @@ namespace Test
             // Test #9
             Assert.Equal(9, _trainRoutes.FindShortestRoute("B", "B"));
         }
+
+        [Fact]
+        public void TestMaxDistanceTrips()
+        {
+            // Test #10
+            Assert.Equal(7, _trainRoutes.CountTripsWithMaxDistance("C", "C", 30));
+        }
     }
 }
