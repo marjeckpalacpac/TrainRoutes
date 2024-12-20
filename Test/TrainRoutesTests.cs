@@ -35,6 +35,11 @@ namespace Test
         {
             // Test #6
             Assert.Equal(2, _trainRoutes.CountTripsWithMaxStops("C", "C", 3));
+
+            // Test #7
+            Assert.Equal(3, _trainRoutes.CountTripsWithExactStops("A", "C", 4));
         }
+
+
     }
 }
