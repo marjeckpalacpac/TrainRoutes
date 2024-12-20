@@ -13,6 +13,7 @@ try
     Console.WriteLine($"Test #7: {service.CountTripsWithExactStops("A", "C", 4)}");
     Console.WriteLine($"Test #8: {service.FindShortestRoute("A", "C")}");
     Console.WriteLine($"Test #9: {service.FindShortestRoute("B", "B")}");
+    Console.WriteLine($"Test #10: {service.CountTripsWithMaxDistance("C", "C", 30)}");
 }
 catch (Exception ex)
 {

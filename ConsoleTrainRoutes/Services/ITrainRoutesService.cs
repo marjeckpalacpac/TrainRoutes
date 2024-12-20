@@ -12,5 +12,6 @@ namespace ConsoleTrainRoutes.Services
         int CountTripsWithMaxStops(string start, string end, int maxStops);
         int CountTripsWithExactStops(string start, string end, int exactStops);
         int FindShortestRoute(string start, string end);
+        int CountTripsWithMaxDistance(string start, string end, int maxDistance);
     }
 }

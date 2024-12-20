@@ -90,5 +90,25 @@ namespace ConsoleTrainRoutes.Services
 
             return minDistance;
         }
+
+        public int CountTripsWithMaxDistance(string start, string end, int maxDistance)
+        {
+            return CountTripsByDistance(start, end, 0, maxDistance);
+        }
+
+        private int CountTripsByDistance(string current, string destination, int currentDistance, int maxDistance)
+        {
+            if (currentDistance >= maxDistance) return 0;
+
+            int count = 0;
+            if (currentDistance > 0 && current == destination) count++;
+
+            foreach (var route in Route.Routes.Where(r => r.From == current))
+            {
+                count += CountTripsByDistance(route.To, destination, currentDistance + route.Distance, maxDistance);
+            }
+
+            return count;
+        }
     }
 }
