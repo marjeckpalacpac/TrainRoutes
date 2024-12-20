@@ -29,5 +29,12 @@ namespace Test
             // Test #5
             Assert.Equal(-1, _trainRoutes.CalculateRouteDistance(new List<string> { "A", "E", "D" }));
         }
+
+        [Fact]
+        public void TestTripCounting()
+        {
+            // Test #6
+            Assert.Equal(2, _trainRoutes.CountTripsWithMaxStops("C", "C", 3));
+        }
     }
 }
